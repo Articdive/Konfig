@@ -1,0 +1,25 @@
+# Gradle
+/.gradle/
+**/build/
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# IntelliJ Files
+/.idea
+*.iml
+**/out
+
+# Eclipse Files
+.classpath
+.project
+
+# Windows specific
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# macOS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100

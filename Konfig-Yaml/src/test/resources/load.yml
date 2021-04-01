@@ -1,0 +1,30 @@
+# Boolean (Keep)
+boolean: true
+# Double (Keep)
+double: "-1.231"
+# Integer (Keep)
+integer: 414
+# List (Keep)
+list:
+  - Hello
+  - John
+  - was not
+  - here!
+# Long (Keep)
+long: 1484
+# Section A (Keep)
+a:
+  # Name (Keep)
+  name: Jona
+  # Section B (Keep)
+  b:
+    # Name (Keep)
+    name: Tommy
+    # Section C (Keep)
+    c:
+      # Name (Keep)
+      name: Jake
+    # Section D (Keep)
+    d:
+      # Name (Keep)
+      name: Samuel

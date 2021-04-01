@@ -1,0 +1,30 @@
+# Comment
+boolean: false
+# Comment
+double: 1.11
+# Comment
+integer: 1
+# Comment
+list:
+  - Hello
+  - John
+  - was
+  - here!
+# Comment
+long: 1
+# Section A
+a:
+  # This is a name.
+  name: null
+  # Section B
+  b:
+    # This is a name.
+    name: Tommy
+    # Section C
+    c:
+      # This is a name.
+      name: null
+    # Section D
+    d:
+      # This is a name.
+      name: Samuel
