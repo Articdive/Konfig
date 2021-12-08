@@ -10,11 +10,11 @@ publishing {
     }
     repositories {
         maven {
-            name = "minestom-repo"
-            url = uri("https://repo.minestom.net/repository/maven-public/")
+            name = "krypton-repo"
+            url = uri("https://repo.kryptonmc.org")
             credentials {
-                username = System.getenv("MINESTOM_REPO_CREDS_USR")
-                password = System.getenv("MINESTOM_REPO_CREDS_PSW")
+                username = System.getenv("KRYPTON_REPO_CREDS_USR")
+                password = System.getenv("KRYPTON_REPO_CREDS_PSW")
             }
         }
     }

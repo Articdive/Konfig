@@ -1,6 +1,6 @@
 dependencies {
     api(project(":Konfig-Core"))
-    implementation("com.amihaiemil.web:eo-yaml:5.2.1")
+    implementation("com.amihaiemil.web:eo-yaml:6.0.0")
 }
 publishing {
     publications {
@@ -14,11 +14,11 @@ publishing {
     }
     repositories {
         maven {
-            name = "minestom-repo"
-            url = uri("https://repo.minestom.net/repository/maven-public/")
+            name = "krypton-repo"
+            url = uri("https://repo.kryptonmc.org")
             credentials {
-                username = System.getenv("MINESTOM_REPO_CREDS_USR")
-                password = System.getenv("MINESTOM_REPO_CREDS_PSW")
+                username = System.getenv("KRYPTON_REPO_CREDS_USR")
+                password = System.getenv("KRYPTON_REPO_CREDS_PSW")
             }
         }
     }

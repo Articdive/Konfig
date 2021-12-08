@@ -28,39 +28,32 @@ It is built using [Gradle](https://gradle.org/).
 
 To add Konfig to your project using [Maven](http://maven.apache.org/) or [Gradle](https://gradle.org/):
 
-Repository (Maven):
+Adding to a Maven Project:
 
-```
-<repository>
-    <id>minestom-repo</id>
-    <url>https://repo.minestom.net/repository/maven-public/</url>
-</repository>
+```xml
+
+<repositories>
+    <repository>
+        <id>krypton-repo</id>
+        <url>https://repo.kryptonmc.org/releases</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>de.articdive</groupId>
+        <artifactId>konfig-TYPE</artifactId>
+        <version>VERSION</version>
+    </dependency>
+</dependencies>
 ```
 
-Dependency (Maven):
+Adding to a Gradle Project (Kotlin DSL)
 
-```
-<dependency>
-    <groupId>de.articdive</groupId>
-    <artifactId>konfig-TYPE</artifactId>
-    <version>VERSION</version>
-</dependency>
-```
-
-Repository (Gradle Kotlin DSL)
-
-```
+```kotlin
 repositories {
-    maven {
-        name = "minestom-repo"
-        url = uri("https://repo.minestom.net/repository/maven-public/")
-    }
+    maven("https://repo.kryptonmc.org/releases")
 }
-```
-
-Dependency (Gradle Kotlin DSL)
-
-```
 dependencies {
     implementation("de.articdive:konfig-TYPE:VERSION")
 }
@@ -68,7 +61,7 @@ dependencies {
 
 ### Config Types
 
-The library currently only supports Hocon as the configuration types, the artifactID is:
+The library currently only supports Hocon as the configuration types, the artifact IDs are:
 
 ```
 konfig-hocon

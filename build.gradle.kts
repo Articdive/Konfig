@@ -4,13 +4,11 @@ group = "de.articdive"
 version = "1.0.0"
 
 plugins {
-    kotlin("jvm") version ("1.5.10") apply (false)
+    kotlin("jvm") version ("1.6.0") apply (false)
 }
-
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 subprojects {
@@ -22,7 +20,6 @@ subprojects {
 
     repositories {
         mavenCentral()
-        jcenter()
         // Sonatype Repository
         maven {
             url = uri("https://oss.sonatype.org/content/groups/public/")
@@ -35,9 +32,9 @@ subprojects {
         "implementation"(kotlin("stdlib-jdk8"))
         // JUnit testing framework
         "testImplementation"(kotlin("test-junit5"))
-        "testImplementation"("org.junit.jupiter:junit-jupiter-api:5.7.0")
+        "testImplementation"("org.junit.jupiter:junit-jupiter-api:5.8.1")
         // Include JUnit enginge for runtime.
-        "testRuntimeOnly"("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+        "testRuntimeOnly"("org.junit.jupiter:junit-jupiter-engine:5.8.1")
     }
     tasks {
         withType<KotlinCompile> {
