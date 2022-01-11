@@ -8,19 +8,18 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+    env:
+      SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+      SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+      SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+      SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
 
     steps:
-      - uses: actions/checkout@v2.4.0
-      - name: Set up JDK 16
-        uses: actions/setup-java@v2.4.0
+      - uses: actions/checkout@v2
+      - name: Setup JDK 17
+        uses: actions/setup-java@v2
         with:
-          java-version: '11'
-          distribution: 'adopt'
-      - name: Publish to Krypton Repository
-        run: gradle publish
-        env:
-          KRYPTON_REPO_CREDS_USR: ${{ secrets.KRYPTON_REPO_CREDS_USR }}
-          KRYPTON_REPO_CREDS_PSW: ${{ secrets.KRYPTON_REPO_CREDS_PSW }}
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Deploy
+        run: ./gradlew publishAllPublicationsToMavenRepository

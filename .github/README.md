@@ -4,7 +4,7 @@
 
 [![license](https://img.shields.io/github/license/Articdive/Konfig.svg)](../LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme)
-[![Discord Shield](https://discordapp.com/api/guilds/525595722859675648/widget.png?style=shield)](https://discord.gg/JnksJCFkE4)
+[![Discord Shield](https://discordapp.com/api/guilds/525595722859675648/widget.png?style=shield)](https://discord.gg/c26nC7FxU6)
 
 Konfig is a simplistic Kotlin-library for creating configs using a Kotlin DSL.
 
@@ -31,14 +31,6 @@ To add Konfig to your project using [Maven](http://maven.apache.org/) or [Gradle
 Adding to a Maven Project:
 
 ```xml
-
-<repositories>
-    <repository>
-        <id>krypton-repo</id>
-        <url>https://repo.kryptonmc.org/releases</url>
-    </repository>
-</repositories>
-
 <dependencies>
     <dependency>
         <groupId>de.articdive</groupId>
@@ -52,8 +44,9 @@ Adding to a Gradle Project (Kotlin DSL)
 
 ```kotlin
 repositories {
-    maven("https://repo.kryptonmc.org/releases")
+    mavenCentral()
 }
+
 dependencies {
     implementation("de.articdive:konfig-TYPE:VERSION")
 }
@@ -61,7 +54,7 @@ dependencies {
 
 ### Config Types
 
-The library currently only supports Hocon as the configuration types, the artifact IDs are:
+The library currently supports Hocon and Yaml as the configuration types, the artifact IDs are:
 
 ```
 konfig-hocon

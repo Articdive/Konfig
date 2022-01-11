@@ -1,24 +1,45 @@
+plugins {
+    id("konfig.publishing-conventions")
+}
+
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     api(project(":Konfig-Core"))
     implementation("com.amihaiemil.web:eo-yaml:6.0.0")
 }
+
 publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = "de.articdive"
             artifactId = "konfig-yaml"
-            version = "${rootProject.version}"
-
+            version = rootProject.version.toString()
             from(components["java"])
-        }
-    }
-    repositories {
-        maven {
-            name = "krypton-repo"
-            url = uri("https://repo.kryptonmc.org")
-            credentials {
-                username = System.getenv("KRYPTON_REPO_CREDS_USR")
-                password = System.getenv("KRYPTON_REPO_CREDS_PSW")
+
+            pom {
+                name.set("Konfig-Yaml")
+                description.set(rootProject.description)
+                url.set("https://github.com/Articdive/Konfig")
+                licenses {
+                    license {
+                        name.set("GPL-3.0 License")
+                        url.set("https://www.gnu.org/licenses/gpl-3.0.en.html")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("Articdive")
+                        name.set("Articdive")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:github.com/Articdive/Konfig.git")
+                    developerConnection.set("scm:git:ssh://github.com/Articdive/Konfig.git")
+                    url.set("https://github.com/Articdive/Konfig/tree/main")
+                }
             }
         }
     }
