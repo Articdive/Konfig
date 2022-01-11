@@ -44,3 +44,12 @@ publishing {
         }
     }
 }
+
+signing {
+    if (System.getenv()["CI"] != null) {
+        useInMemoryPgpKeys(System.getenv()["SIGNING_KEY"], System.getenv()["SIGNING_PASSWORD"])
+        // Only attempt to sign if we are in the CI.
+        // If you are publishing to maven local then it doesn't need signing.
+        sign(publishing.publications["maven"])
+    }
+}
